@@ -1,0 +1,43 @@
+/* желтый блок*/
+
+.slider_block__yellow_block {
+  position: absolute;
+  width: 138px;
+  height: 383px;
+  background-color: #f7e611;
+  padding: 5px;
+  top: 159px;
+  right: 198px; 
+  z-index: 5;
+}
+
+/* цифры в желтом блоке*/
+
+.yellow_block__number {  
+  display: inline-block;
+  font-family: "Geometria HeavyItalic";
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.33;
+  letter-spacing: 4.5px;
+  margin: 288px 0 0 16px;
+}
+
+.yellow_block__number::after {
+  content: "";
+  width: 17px;
+  height: 3px;
+  background-color: #000000;
+  position: absolute;
+  bottom: 43px;
+  right: 44px;
+}
+
+.yellow_block__number::before {
+  content: "7";
+  position: absolute;
+  font-size: 17px;
+  bottom: 17px;
+  right: 49px;
+}
+
