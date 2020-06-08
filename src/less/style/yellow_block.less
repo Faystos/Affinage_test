@@ -8,7 +8,7 @@
   padding: 5px;
   top: 159px;
   right: 198px; 
-  z-index: 5;
+  z-index: 6;
 }
 
 /* цифры в желтом блоке*/
@@ -21,23 +21,22 @@
   line-height: 1.33;
   letter-spacing: 4.5px;
   margin: 288px 0 0 16px;
-}
 
-.yellow_block__number::after {
-  content: "";
-  width: 17px;
-  height: 3px;
-  background-color: #000000;
-  position: absolute;
-  bottom: 43px;
-  right: 44px;
-}
+  &::after {
+    content: "";
+    width: 17px;
+    height: 3px;
+    background-color: #000000;
+    position: absolute;
+    bottom: 43px;
+    right: 44px;
+  }
 
-.yellow_block__number::before {
-  content: "7";
-  position: absolute;
-  font-size: 17px;
-  bottom: 17px;
-  right: 49px;
+  &::before {
+    content: "7";
+    position: absolute;
+    font-size: 17px;
+    bottom: 17px;
+    right: 49px;
+  }
 }
-

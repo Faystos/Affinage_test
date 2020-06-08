@@ -1,0 +1,30 @@
+.main__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  right: 80px;
+}
+
+.nav__btn {   
+  width: 54px;
+  height: 54px;
+  border: none;
+  z-index: 10;
+  
+}
+
+.nav__btn_img {
+  &:hover {  
+    .btn_img__circle {
+      fill: #8B0000; 
+    }   
+  }
+
+  &:active {
+    .btn_img__circle {
+      fill: #330099; 
+    }    
+  }
+}

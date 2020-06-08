@@ -2,55 +2,55 @@
 
 .slider_block__item {  
   position: absolute;
-}
 
-.slider_block__item::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(247,230,17,.8);
-  z-index: 4;
-}
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(247,230,17,.8);
+    z-index: 4;
+  }
 
-.slider_block__item-left {
-  width: 800px;
-  height: 525px;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  background: url('../../img/Arca.jpg') no-repeat 100% 100%;
-}
+  &--left {
+    width: 800px;
+    height: 525px;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: url('../../img/Arca.jpg') no-repeat 100% 100%;
+  }
 
-.slider_block__item-right {
-  width: 860px;
-  height: 490px;
-  bottom: 0;
-  right: 0;
-  background: url('../../img/ural.jpg') no-repeat 100% 100%;
-  z-index: 3;
-}
+  &--right {
+    width: 860px;
+    height: 490px;
+    bottom: 0;
+    right: 0;
+    background: url('../../img/ural.jpg') no-repeat 100% 100%;
+    z-index: 3;
+  }
 
-.slider_block__item-back {  
-  animation-duration: 3s;
-  animation-name: back;
-  top: 0;  
-  left: 0;
-  width: 800px; 
-  height: 525px;
-  z-index: 2;
-}
+  &--back {  
+    animation-duration: 3s;
+    animation-name: back;
+    top: 0;  
+    left: 0;
+    width: 800px; 
+    height: 525px;
+    z-index: 2;
+  }
 
-.slider_block__item-front {
-  animation-duration: 3s;
-  animation-name: front;
-  top: 87px;
-  left: 420px;
-  width: 860px;
-  height: 490px;
-  z-index: 3;
+  &--front {
+    animation-duration: 3s;
+    animation-name: front;
+    top: 87px;
+    left: 420px;
+    width: 860px;
+    height: 490px;
+    z-index: 3;
+  }
 }
 
 /*блок контроля слайдера*/
@@ -66,7 +66,7 @@
   z-index: 6;
 }
 
-/*кнопки смены слайдера*/
+/*Управление слайдером*/
 
 .control_slider__btn {
   width: 25px;
@@ -80,22 +80,22 @@
   background-color: transparent;
   cursor: pointer;
   opacity: .4;
-}
 
-.control_slider__btn:hover {
-  opacity: .7;
-}
+  &:hover {
+    opacity: .7;
+  }
 
-.control_slider__btn:active {
-  opacity: .3;
-}
+  &:active {
+    opacity: .3;
+  }
 
-.control_slider__btn-left {
-  transform: rotate(135deg);
-}
+  &--left {
+    transform: rotate(135deg)
+  }
 
-.control_slider__btn-right {
-  transform: rotate(-45deg);
+  &--right {
+    transform: rotate(-45deg);
+  }
 }
 
 /*Анимация слайдов*/

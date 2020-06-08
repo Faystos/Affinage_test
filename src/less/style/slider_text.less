@@ -1,10 +1,31 @@
 .slider_block__text {
-  /* font-family: "Geometria"; */
+  display: inline-block;
+  position: absolute;
+  font-family: "Geometria Medium";
   width: 61px;
   height: 101px;
   font-size: 80px;
-  font-weight: 500;
+  font-weight: 500;  
   -webkit-text-stroke: 1px #000000;
   z-index: 1000;
-  color: #000000;
+  color: #ffffff;
+
+  &--a {
+    top: -50px;
+    right: 318px;
+    z-index: 1
+  }
+
+  &--f {
+    top: 32px;
+    right: 143px;
+    z-index: 1;
+  }
+
+  &--g {
+    top: 110px;
+    right: 236px;
+    color: transparent;
+    z-index: 5;   
+  }
 }
