@@ -1,0 +1,39 @@
+.left_block__number {
+  display: inline-block;
+  font-family: "Geometria Heavy";
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2.8px;
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 36px;
+  height: 31px;
+  top: 128px;
+  right: 126px; 
+  opacity: 0.5;  
+  z-index: 12;
+
+  &::after, &::before {
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    font-family: "Geometria Light";
+    font-size: 14px;    
+    letter-spacing: normal;
+    position: absolute;
+    transform: rotate(90deg);
+    opacity: 1;
+    z-index: 12;
+    top: -338px;
+  }
+
+  &::after {
+    content: "(1)";  
+    left: -37px;        
+  }
+
+  &::before {
+    content: "(3)";    
+    left: -117px;    
+  }
+}

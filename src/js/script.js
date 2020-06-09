@@ -6,8 +6,7 @@ btns.forEach(el => {
     sliderBlockItem.forEach(it => {
       startAnimation(it);
       toogleClass(it);
-    })
-    
+    })    
   })
 });
 
@@ -15,7 +14,6 @@ function startAnimation (el) {
   if (el.classList.contains('slider_block__item--left') && (!el.classList.contains('slider_block__item--back'))) {
     el.classList.add('slider_block__item--front');
   }
-
   if (el.classList.contains('slider_block__item--right') && (!el.classList.contains('slider_block__item--front'))) {
     el.classList.add('slider_block__item--back');
   } else {
@@ -34,9 +32,3 @@ function toogleClass (el) {
     return;
   }
 }
-
-
-/*
-
-    
-    */

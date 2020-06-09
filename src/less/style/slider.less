@@ -46,7 +46,7 @@
     animation-duration: 3s;
     animation-name: front;
     top: 87px;
-    left: 420px;
+    left: 350px;
     width: 860px;
     height: 490px;
     z-index: 3;
@@ -98,6 +98,34 @@
   }
 }
 
+/* Блок с текстом Урал*/
+.slider_block__block_ural {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  top: 119px;
+  left: 506px;
+  border: solid 1px #000000;
+  border-radius: 50%;
+  z-index: 15;
+
+
+  .block_ural__text {
+    font-family: "Geometria";
+    width: 55px;
+    font-size: 17px;
+    letter-spacing: 2.14px;
+    line-height: 1.24;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 3px 3px;
+  }
+}
+
+
 /*Анимация слайдов*/
 
 @keyframes back {
@@ -133,6 +161,72 @@
  } 
  100% {
   top: 87px;
-  left: 420px;    
+  left: 350px;    
  } 
 }
+
+@media (min-width: 1440px) {
+  .slider_block__item {
+    &--back {  
+      animation-duration: 3s;
+      animation-name: back;
+      top: 0;  
+      left: 0;
+      width: 800px; 
+      height: 525px;
+      z-index: 2;
+    }
+
+    &--front {
+      animation-duration: 3s;
+      animation-name: front;
+      top: 87px;
+      left: 420px;
+      width: 860px;
+      height: 490px;
+      z-index: 3;
+    }
+  }
+
+/*Анимация слайдов*/
+
+  @keyframes back {
+    0% { 
+      top: 87px;
+      left: 420px;
+    }
+    50% {
+      top: 0;
+      left: 420px;
+      z-index: 2;
+      width: 800px; 
+      height: 525px;
+    } 
+
+    100% {
+      top: 0;  
+      left: 0;   
+    }
+  }
+
+  @keyframes front {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    50% {
+    top: 87px;
+    left: 0;
+    z-index: 3;
+    width: 860px;
+    height: 490px;
+    } 
+    100% {
+      top: 87px;
+      left: 420px;    
+    } 
+  }
+}
+
+
+
