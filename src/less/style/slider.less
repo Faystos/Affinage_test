@@ -1,7 +1,12 @@
-/*слайды*/
+// Слайды
 
 .slider_block__item {  
   position: absolute;
+
+  .item__img {
+    width: 100%;
+    height: 100%;
+  }
 
   &::before {
     content: "";
@@ -19,17 +24,15 @@
     height: 525px;
     top: 0;
     left: 0;
-    z-index: 2;
-    background: url('../../img/Arca.jpg') no-repeat 100% 100%;
+    z-index: 2;          
   }
 
   &--right {
     width: 860px;
     height: 490px;
     bottom: 0;
-    right: 0;
-    background: url('../../img/ural.jpg') no-repeat 100% 100%;
-    z-index: 3;
+    right: 0;    
+    z-index: 3;    
   }
 
   &--back {  
@@ -53,7 +56,7 @@
   }
 }
 
-/*блок контроля слайдера*/
+//блок контроля слайдера
 
 .slider_block__control_slider {
   height: 36px;
@@ -64,41 +67,42 @@
   right: 164px;
   position: absolute;
   z-index: 6;
+
+  // Кнопки управления слайдером
+
+  .control_slider__btn {
+    width: 25px;
+    height: 25px;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    border-bottom: 4px solid #000000;
+    border-right: 4px solid #000000; 
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: .4;
+  
+    &:hover {
+      opacity: .7;
+    }
+  
+    &:active {
+      opacity: .3;
+    }
+  
+    &--left {
+      transform: rotate(135deg)
+    }
+  
+    &--right {
+      transform: rotate(-45deg);
+    }
+  }
 }
 
-/*Управление слайдером*/
+// Блок с текстом Урал
 
-.control_slider__btn {
-  width: 25px;
-  height: 25px;
-  font-size: 0;
-  padding: 0;
-  border: none;
-  border-bottom: 4px solid #000000;
-  border-right: 4px solid #000000; 
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
-  opacity: .4;
-
-  &:hover {
-    opacity: .7;
-  }
-
-  &:active {
-    opacity: .3;
-  }
-
-  &--left {
-    transform: rotate(135deg)
-  }
-
-  &--right {
-    transform: rotate(-45deg);
-  }
-}
-
-/* Блок с текстом Урал*/
 .slider_block__block_ural {
   position: absolute;
   display: flex;
@@ -122,6 +126,27 @@
     color: #ffffff;
     text-transform: uppercase;
     margin: 0 0 3px 3px;
+  }
+}
+
+// Блок с лозой
+
+.slider_block__block_img {  
+  width: 160px;
+  height: 112px;
+  margin: 0 55px -20px 0;
+  z-index: 100;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 213px;
+    height: 10px;
+    opacity: 0.75;
+    background-color: #f7e611;
+    position: absolute;
+    bottom: -22px;
+    left: 0;
   }
 }
 
@@ -167,24 +192,14 @@
 
 @media (min-width: 1440px) {
   .slider_block__item {
-    &--back {  
-      animation-duration: 3s;
-      animation-name: back;
+    &--back {
       top: 0;  
-      left: 0;
-      width: 800px; 
-      height: 525px;
-      z-index: 2;
+      left: 0;      
     }
 
-    &--front {
-      animation-duration: 3s;
-      animation-name: front;
+    &--front {      
       top: 87px;
-      left: 420px;
-      width: 860px;
-      height: 490px;
-      z-index: 3;
+      left: 420px;      
     }
   }
 
@@ -202,7 +217,6 @@
       width: 800px; 
       height: 525px;
     } 
-
     100% {
       top: 0;  
       left: 0;   

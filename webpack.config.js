@@ -1,88 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-let styleMode;
-
-
 
 module.exports = ({mode}) => {
-  console.log('server started');
-  if (mode === 'development') {
-    console.log(`mode active: ${mode}`);
-    styleMode = {
-      test: /\.less$/,            
-      use: [              
-        {
-          loader: 'style-loader'
-        },
-        {
-          loader: 'css-loader',
-          options: {
-              sourceMap: true
-          }
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: [
-                autoprefixer({
-                    browsers:['ie >= 8', 'last 4 version']
-                })
-            ],
-            sourceMap: true
-        }
-        },
-        {
-          loader: 'less-loader',
-          options: {
-            lessOptions: {
-              strictMath: true,
-            },
-          },
-        },
-      ]
-    }    
-  }  
-
-  if (mode === 'production') {
-    console.log(`mode active: ${mode}`);
-    styleMode = {
-      test: /\.(css|less)$/,            
-      use: [              
-        {
-          loader: MiniCssExtractPlugin.loader
-        },
-        {
-          loader: 'css-loader',
-          options: {
-              sourceMap: true
-          }
-        },
-        {
-          loader: 'postcss-loader',          
-          options: {
-            plugins: [
-                autoprefixer({
-                    browsers:['ie >= 8', 'last 4 version']
-                })
-            ],
-            sourceMap: true
-        }          
-        },
-        {
-          loader: 'less-loader',
-          options: {
-            lessOptions: {
-              strictMath: true,
-            },
-          },
-        },
-      ]
-    }
-  }
-
+  console.log('server started')
   return {
     mode: mode,
     entry: './src/index.js',
@@ -93,28 +14,25 @@ module.exports = ({mode}) => {
 
     module: {
       rules: [
-        styleMode,
+        {
+          test: /\.less$/,
+          use: ['style-loader', 'css-loader', 'less-loader']
+        },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
-          use: [
-          'file-loader',
-          ],
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './fonts'
+          },
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
-          use: [
-            'file-loader',
-          ],
-        },
-        {
-          test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
-          }
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: './img'
+          },
         },
       ],
     },
@@ -130,11 +48,8 @@ module.exports = ({mode}) => {
       new HtmlWebpackPlugin({
           title: 'Affinage test',
           template: './src/index.html'
-        }),
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[id].css',
-      }),
-    ],   
+        }),      
+    ],
+
   }
-}
+} 
