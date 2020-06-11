@@ -1,0 +1,57 @@
+.right_block__block_text {
+  width: 300px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 25px;
+    background: url("../../img/triangle.png") 100% 100%;
+    top: -46px;
+    left: 36px;
+}
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    background: url("../../img/triangle_p.png") 100% 100%;
+    bottom: 42px;
+    right: 7px;
+  }
+
+  .block_text {
+    font-family: "Philosopher Bold";
+    font-size: 25px;
+    color: #000000;
+    display: inline-block;
+    position: absolute;    
+
+    &--a {
+      top: -77px;
+      left: 0;
+    }
+
+    &--g {
+      top: -70px;
+      left: 101px;
+
+      &::after {
+        content: "G";
+        color: rgba(0, 0, 0, 0.1);
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        bottom: 5px;
+        left: -5px;
+      }      
+    }
+
+    &--e {
+      bottom: 17px;
+      right: 73px;
+    }
+  }
+}

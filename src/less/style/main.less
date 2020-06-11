@@ -26,7 +26,7 @@ button {
 
 .main {
   width: 100%;
-  max-width: 1440px;
+  // max-width: 1440px;
   height: 800px;  
   overflow: hidden;
   display: flex;
@@ -43,12 +43,12 @@ button {
     width: 976px;
     height: 130px;  
     position: absolute;
-    top: 324px;
-    left: 223px;  
+    top: 214px;
+    left: 143px; 
     margin: 0;  
     z-index: 7;
-  }
-
+  } 
+  
   .main__logo {
     font-family: "Philosopher Bold";
     font-size: 34px;
@@ -56,7 +56,7 @@ button {
     z-index: 100;
     position: absolute;
     top: 30px;
-    left: 34px;   
+    left: 34px;
   }
 
   // Блок навигации
@@ -99,17 +99,20 @@ button {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 58%;
-    max-width: 720px;
+    width: 50%;
+    // max-width: 720px;
     height: 100%;
     position: relative;
     background: linear-gradient(to right, rgb(254, 254, 254) 0%, rgb(248, 248, 248) 20%, rgb(244, 244, 244) 100%);  
   }
   
   .main__right_block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     width: 50%;
-    max-width: 720px;
-    height: 100%;  
+    // max-width: 720px;
+    height: 100%;      
   }
 
   // Главный блок слайдера
@@ -121,12 +124,17 @@ button {
     width: 90%;
     max-width: 1280px;
     height: 577px;
-    position: absolute;
-    top: 97px;  
-    left: 80px;
+    position: absolute;    
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
     background:  transparent;
+
+    
   }
 }
+
+
 
 
 
