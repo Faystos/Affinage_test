@@ -1,43 +1,67 @@
 /* желтый блок*/
 
 .slider_block__yellow_block {
-  position: absolute;
-  width: 138px;
-  height: 383px;
-  background-color: #f7e611;
-  padding: 5px;
-  top: 145px;
-  right: 198px; 
-  z-index: 6; 
+  @media (min-width: 320px) {
+    position: absolute;
+    width: 104px;
+    height: 0;
+    right: 0; 
+    bottom: 0;
+    border-bottom: 100px solid #f7e611; 
+    border-left: 100px solid transparent;
+    z-index: 6;
+  }
+
+  @media (min-width: 1320px) {   
+    width: 138px;
+    height: 383px;
+    background-color: #f7e611;
+    padding: 5px;
+    top: 145px;
+    right: 198px; 
+    
+  }
+   
 
   // цифры в желтом блоке
 
-  .yellow_block__number {  
-    display: inline-block;
-    font-family: "Geometria HeavyItalic";
-    font-weight: 900;
-    font-size: 44px;
-    line-height: 1.33;
-    letter-spacing: 4.5px;
-    margin: 288px 0 0 16px;
-
-    &::after {
-      content: "";
-      width: 17px;
-      height: 3px;
-      background-color: #000000;
+  .yellow_block__number {
+    @media (min-width: 320px) {
+      display: inline-block;
+      font-family: "Geometria HeavyItalic";
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 1.33;
+      letter-spacing: 3.5px;
       position: absolute;
-      bottom: 43px;
-      right: 44px;
+      bottom: -79px;
+      right: 17px;
     }
 
-    &::before {
-      content: "7";
-      position: absolute;
-      font-size: 17px;
-      bottom: 17px;
-      right: 49px;
-    }
+    @media (min-width: 1320px) {      
+      font-size: 44px;
+      line-height: 1.33;
+      letter-spacing: 4.5px;
+      margin: 288px 0 0 16px;
+
+      &::after {
+        content: "";
+        width: 17px;
+        height: 3px;
+        background-color: #000000;
+        position: absolute;
+        bottom: 43px;
+        right: 44px;
+      }
+
+      &::before {
+        content: "7";
+        position: absolute;
+        font-size: 17px;
+        bottom: 17px;
+        right: 49px;
+      }
+    }    
   }
 }
 

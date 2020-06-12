@@ -1,9 +1,17 @@
-.nav__btn {   
-  width: 54px;
-  height: 54px;  
-  z-index: 10;  
-
+.nav__btn { 
   .nav__btn_img {
+    @media (min-width: 320px){
+      .btn_img__circle {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1320px) {
+      .btn_img__circle {
+        display: inline-block;
+      }
+    }
+    
     &:hover {  
       .btn_img__circle {
         fill: #8B0000; 

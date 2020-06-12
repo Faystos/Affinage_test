@@ -25,112 +25,180 @@ button {
 /* -----------------------------------------------*/
 
 .main {
-  width: 100%;
-  // max-width: 1440px;
-  height: 800px;  
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  position: relative;
-
-  .main__title {
-    display: inline-block;
-    font-family: "Philosofer Regular";
-    font-size: 140px;
-    line-height: 1.09;
-    letter-spacing: 50.4px;
-    color: #ffffff;
-    width: 976px;
-    height: 130px;  
-    position: absolute;
-    top: 214px;
-    left: 143px; 
-    margin: 0;  
-    z-index: 7;
-  } 
+  @media (min-width: 320px) {
+    width: 100%;    
+    height: 568px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  @media (min-width: 1320px) {
+    height: 800px;
+  }
+   
+    
+    
   
   .main__logo {
-    font-family: "Philosopher Bold";
-    font-size: 34px;
-    color: #000000;
-    z-index: 100;
-    position: absolute;
-    top: 30px;
-    left: 34px;
+    @media (min-width: 320px) {
+      display: inline-block;
+      font-family: "Philosopher Bold";
+      font-size: 34px;
+      color: #000000;
+      z-index: 100;
+      position: absolute;
+      top: 11px;
+    left: 6%;
+    }
+
+    @media (min-width: 1320px) {      
+      top: 30px;
+      left: 34px;
+    }    
   }
 
   // Блок навигации
 
   .main__nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 100px;
-    right: 80px;
+    @media (min-width: 320px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0px;
+      right: 3px;
+    }
+
+    @media (min-width: 1320px) {
+      top: 100px;
+      right: 80px;
+    }     
   }  
 
-  // Фигурный прямоугольник
-
-  .main__block_figure {
-    width: 177px;
-    height: 282px;
-    position: absolute;
-    top: 266px;
-    left: 349px; 
-    z-index: 5;
   
-    &::before {
-      content: "очень хороший слоган";
-      font-family: "Philosofer Italic";
-      font-size: 9px;
-      color: #000000;
-      position: absolute;
-      bottom: 56px;
-      left: -66px;
-      transform: rotate(-90deg);    
-      opacity: 0.5;
-    }
-  }
+
+  
 
   // Левый и правый блоки заднего фона
 
   .main__left_block {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 50%;
-    // max-width: 720px;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(to right, rgb(254, 254, 254) 0%, rgb(248, 248, 248) 20%, rgb(244, 244, 244) 100%);  
+    @media (min-width: 320px) {
+      display: none;
+    }
+
+    @media (min-width: 1320px) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 50%;    
+      height: 100%;
+      position: relative;
+      background: linear-gradient(to right, rgb(254, 254, 254) 0%, rgb(248, 248, 248) 20%, rgb(244, 244, 244) 100%);
+    }      
   }
   
   .main__right_block {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 50%;
-    // max-width: 720px;
-    height: 100%;      
+    @media (min-width: 320px) {
+      display: none;
+    }
+
+    @media (min-width: 1320px) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 50%;    
+      height: 100%;
+    }          
   }
 
   // Главный блок слайдера
 
   .main__slider_block {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 90%;
-    max-width: 1280px;
-    height: 577px;
-    position: absolute;    
-    top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    background:  transparent;
+    @media (min-width: 320px) {
+      width: 100%;
+      height: 100%;
+      background: #f7e611;
+    }
 
-    
+    @media (min-width: 1320px) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 90%;
+      max-width: 1280px;
+      height: 577px;
+      position: absolute;    
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      background:  transparent;
+    }      
+
+    .slider_block__title {
+      @media (min-width: 320px) {
+        display: none;
+      }
+
+      @media (min-width: 1320px) {
+        display: inline-block;
+        font-family: "Philosofer Regular";
+        font-size: 140px;
+        line-height: 1.09;
+        letter-spacing: 50.4px;
+        color: #ffffff;
+        width: 976px;
+        height: 130px;  
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%); 
+        margin: 0;  
+        z-index: 8;
+      }      
+      
+      @media (min-width: 1440px) {
+        top: 214px;
+        left: 143px;
+        transform: none;
+      }      
+    }
+   
+
+  // Фигурный прямоугольник
+    .slider_block__block_figure {
+      @media (min-width: 320px) {
+        width: 154px;
+        height: 135px;
+        transform: rotate(90deg);
+        position: absolute;
+        top: -6%;
+        left: 95%;
+        z-index: 100;
+      }
+
+      @media (min-width: 1320px) {        
+        width: 177px;
+        height: 282px;
+        // position: absolute;
+        transform: none;
+        top: 155px;
+        left: 269px;
+        z-index: 4;
+      }      
+
+      &::before {
+        content: "очень хороший слоган";
+        font-family: "Philosofer Italic";
+        font-size: 9px;
+        color: #000000;
+        position: absolute;
+        bottom: 56px;
+        left: -66px;
+        transform: rotate(-90deg);    
+        opacity: 0.5;
+      }
+    }
   }
 }
 
