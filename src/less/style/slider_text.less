@@ -1,31 +1,72 @@
 .slider_block__text {
-  display: inline-block;
-  position: absolute;
-  font-family: "Geometria Medium";
-  width: 61px;
-  height: 101px;
-  font-size: 80px;
-  font-weight: 500;  
-  -webkit-text-stroke: 1px #000000;
-  z-index: 1000;
-  color: #ffffff;
+  @media (min-width: 320px) {
+    display: inline-block;
+    position: absolute;
+    font-family: "Geometria Medium";
+    font-size: 60px;
+    font-weight: 500;
+    -webkit-text-stroke: 1px #000000;
+    color: transparent;
+  }
+
+  @media (min-width: 1320px) {
+    width: 61px;
+    height: 101px;
+    font-size: 80px;
+    color: #ffffff;
+  }
+  
+  
 
   &--a {
-    top: -65px;
-    right: 318px;
-    z-index: 1
+    @media (min-width: 320px) {
+      top: 229px;
+      right: 64%;
+      z-index: 10;
+    }
+    @media (min-width: 1320px) {
+      top: -65px;
+      right: 318px;
+      z-index: 1
+    }
   }
 
   &--f {
-    top: 17px;
-    right: 143px;
-    z-index: 1;
+    @media (min-width: 320px) {
+      display: none;
+    }
+    
+    @media (min-width: 1320px) {
+      display: inline;
+      top: 17px;
+      right: 143px;
+      z-index: 5;
+    }
   }
 
   &--g {
-    top: 95px;
-    right: 236px;
-    color: transparent;
-    z-index: 5;   
+    @media (min-width: 320px) {
+      top: 213px;
+      right: 39%;
+      z-index: 5;
+    }
+    @media (min-width: 1320px) {
+      top: 95px;
+      right: 236px;
+      color: transparent;
+      z-index: 6;
+    }
+  }
+
+  &--e {
+    @media (min-width: 320px) {
+      top: 135px;
+      right: 20%;
+      z-index: 5;
+    }
+
+    @media (min-width: 1320px) {
+      display: none;
+    }
   }
 }
