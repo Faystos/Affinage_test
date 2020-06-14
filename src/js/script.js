@@ -13,8 +13,12 @@ btns.forEach(el => {
       startAnimation(it);
       toogleClass(it);      
     });
+
+    if (i == imgArr.length) i = 0; 
     swapImagSlide(imgLeft, imgArr);
-    swapImagSlide(imgRight, imgArr);    
+    // swapImagSlide(imgRight, imgArr, i);
+    i++; 
+       
   })
 });
 
@@ -44,9 +48,12 @@ function toogleClass (el) {
 }
 
 // смена изображения в слайдах.
-function swapImagSlide (imgSlide, arr) {
-  if (i === arr.length) i = 0;  
-  imgSlide.src = `./img/${arr[i]}.jpg`;    
-  i++;    
+function swapImagSlide (imgSlide, arr) {   
+  imgSlide.src = `./img/${arr[i]}.jpg`;
+  
+  console.log(i);
+  // console.log(arr.length);
+    
+      
 }
 

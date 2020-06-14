@@ -32,13 +32,36 @@ button {
     display: flex;
     justify-content: center;
     position: relative;
+
+    &::after {
+      content:  "";
+      width: 23px;
+      height: 24px;
+      position: absolute;
+      bottom: 5%;
+      left: 14%;
+      background: url("../../img/triangle.png");
+      z-index: 10;
+    }
+
+    &::before {
+      content:  "";
+      width: 23px;
+      height: 24px;
+      position: absolute;
+      background: url("../../img/triangle_p.png");
+      top: 40%;
+      right: 8.9%;
+      z-index: 10;
+    }
   }
   @media (min-width: 1320px) {
     height: 800px;
-  }
-   
-    
-    
+    &::after,
+    &::before {
+      display: none;
+    }
+  }    
   
   .main__logo {
     @media (min-width: 320px) {
@@ -49,7 +72,7 @@ button {
       z-index: 100;
       position: absolute;
       top: 11px;
-    left: 6%;
+      left: 6%;
     }
 
     @media (min-width: 1320px) {      
@@ -62,23 +85,22 @@ button {
 
   .main__nav {
     @media (min-width: 320px) {
+      width: 54px;
+      height: 54px;
       display: flex;
       justify-content: center;
       align-items: center;
       position: absolute;
       top: 0px;
       right: 3px;
+      z-index: 10;
     }
 
     @media (min-width: 1320px) {
       top: 100px;
       right: 80px;
     }     
-  }  
-
-  
-
-  
+  }    
 
   // Левый и правый блоки заднего фона
 
@@ -94,7 +116,7 @@ button {
       width: 50%;    
       height: 100%;
       position: relative;
-      background: linear-gradient(to right, rgb(254, 254, 254) 0%, rgb(248, 248, 248) 20%, rgb(244, 244, 244) 100%);
+      background: linear-gradient(to right, rgb(254, 254, 254) 0%, rgb(248, 248, 248) 20%, rgb(244, 244, 244) 100%);     
     }      
   }
   
@@ -119,12 +141,13 @@ button {
       width: 100%;
       height: 100%;
       background: #f7e611;
-    }
 
-    @media (min-width: 1320px) {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+    }
+
+    @media (min-width: 1320px) {      
       width: 90%;
       max-width: 1280px;
       height: 577px;
@@ -158,12 +181,11 @@ button {
       }      
       
       @media (min-width: 1440px) {
-        top: 214px;
+        top: 213px;
         left: 143px;
         transform: none;
       }      
-    }
-   
+    }   
 
   // Фигурный прямоугольник
     .slider_block__block_figure {
@@ -179,24 +201,36 @@ button {
 
       @media (min-width: 1320px) {        
         width: 177px;
-        height: 282px;
-        // position: absolute;
+        height: 282px;        
         transform: none;
         top: 155px;
         left: 269px;
-        z-index: 4;
+        z-index: 6;
       }      
 
       &::before {
-        content: "очень хороший слоган";
-        font-family: "Philosofer Italic";
-        font-size: 9px;
-        color: #000000;
-        position: absolute;
-        bottom: 56px;
-        left: -66px;
-        transform: rotate(-90deg);    
-        opacity: 0.5;
+        @media (min-width: 320px) {
+          content: "очень хороший слоган";
+          width: 96px;
+          height: 20px;
+          font-family: "Philosofer Italic";
+          font-size: 9px;  
+          color: #000000;
+          position: absolute;
+          transform: rotate(180deg);
+          opacity: 0.5;
+          z-index: 10;
+          top: 301.6%;
+          left: 154%;
+        }
+        @media (min-width: 1320px) {          
+          font-size: 9px;        
+          top: 74.9%;
+          left: -37.5%;
+          width: 97px;
+          height: 14px;
+          transform: rotate(-90deg);
+        }        
       }
     }
   }
