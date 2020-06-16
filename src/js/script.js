@@ -15,7 +15,7 @@ btns.forEach(el => {
     });
 
     if (i == imgArr.length) i = 0; 
-    swapImagSlide(imgLeft, imgArr);
+    // swapImagSlide(imgLeft, imgArr);
     // swapImagSlide(imgRight, imgArr, i);
     i++; 
        

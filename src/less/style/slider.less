@@ -1,11 +1,14 @@
 // Слайды
 
 .slider_block__item {  
-  position: absolute;
+  position: absolute;  
 
+  // Картинка
   .item__img {
-    width: 100%;
-    height: 100%;    
+    @media (min-width: 320px) {
+      width: 100%;
+      height: 100%;
+    }          
   } 
 
   &::before {
@@ -26,17 +29,25 @@
   }
 
   &--left {   
-    @media (min-width: 320px) {     
-      width: 73.6%;
+    @media (min-width: 320px) {       
+      width: 280px;
       height: 184px;
       top: 83px;
-      left: 0;
+      left: -44px;
     }
+
+    @media (min-width: 620px) {      
+      width: 89%;
+      height: 260px;
+    }
+    
     @media (min-width: 1320px) {
       width: 62.5%;
-      height: 525px;
-      top: -14px;
-      left: 0;
+      height: 525px;      
+      top: auto;
+      left: auto;
+      bottom: 9%;
+      right: 37.5%;
       z-index: 2;  
     }
 
@@ -44,24 +55,27 @@
       @media (min-width: 320px) {
         background-color: rgba(247,230,17,.8);
       }
-    }
-            
+    }            
   }
 
   &--right {
     @media (min-width: 320px) {      
-      width: 100%;
+      width: 559px;
       height: 318px;
-      bottom: 0;
-      right: 0;
+      bottom: 0;      
+      right: -118px;
       z-index: 5;
+    }
+
+    @media (min-width: 620px) {
+      width: 100%;
     }
 
     @media (min-width: 1320px) {
       width: 67%;
-      height: 490px;
-      bottom: 14px;
-      right: 0;      
+      height: 490px;      
+      bottom: 0;
+      right: 0;     
     }
   }
 
@@ -69,8 +83,8 @@
     @media (min-width: 1320px) {
       animation-duration: 3s;
       animation-name: back;
-      top: 0;  
-      left: 0;
+      bottom: 9%;
+      right: 37.5%;
       width: 800px; 
       height: 525px;
       z-index: 2;
@@ -81,8 +95,8 @@
     @media (min-width: 1320px) {
       animation-duration: 3s;
       animation-name: front;
-      top: 87px;
-      left: 350px;
+      bottom: 0;
+      right: 0;
       width: 860px;
       height: 490px;
       z-index: 3;
@@ -90,7 +104,32 @@
   }
 }
 
-//блок контроля слайдера
+.slider_block__tagline {
+  @media (min-width: 320px) {      
+    width: 96px;
+    height: 20px;
+    font-family: "Philosofer Italic";
+    font-size: 9px;  
+    color: #000000;
+    position: absolute;
+    transform: rotate(-90deg);
+    opacity: 0.5;
+    z-index: 10;     
+    top: 232px;
+    left: -16px;
+  }
+
+  @media (min-width: 1320px) {          
+    font-size: 9px;        
+    top: 380px;
+    left: 202px;
+    width: 97px;
+    height: 14px;
+    transform: rotate(-90deg);
+  }
+}
+
+// Блок управления слайдером
 
 .slider_block__control_slider {
   @media (min-width: 320px) {
@@ -100,18 +139,29 @@
     width: 100%;
     padding: 0 7.5% 0 8%;
     top: 399px;
-    z-index: 6;
+    left: 0px;
+    z-index: 100;
   }
 
-  @media (min-width: 1320px) {
+  @media (min-width: 620px) {
+    width: 84%;
+    left: 123px
+  }
+
+  @media (min-width: 1320px) {    
     height: 36px;
     width: 206px;    
-    top: 379px;
-    right: 164px; 
-    padding: 0;   
+    top: 379px;    
+    left: auto;
+    right: 166px;
+    padding: 0; 
+    z-index: 100;  
   }
 
-  
+  @media (min-width: 1440px) {
+    top: 392px;
+    left: auto;    
+  }
 
   // Кнопки управления слайдером
 
@@ -162,7 +212,7 @@
     align-items: center;
     width: 100px;
     height: 100px;
-    top: 105px;
+    top: 119px;
     left: 506px;
     border: solid 1px #000000;
     border-radius: 50%;
@@ -199,7 +249,7 @@
   @media (min-width: 1320px) {    
     width: 160px;
     height: 112px;
-    margin: 0 55px -6px 0;
+    margin: 0 56px -19px 0;
     z-index: 100;
     position: relative;
 
@@ -226,92 +276,37 @@
 
 @keyframes back {
   0% { 
-    top: 87px;
-    left: 420px;
+    bottom: 0;
+    right: 0;
   }
   50% {
-    top: 0;
-    left: 420px;
+    bottom: 0;
+    right: 37.5%;
     z-index: 2;
     width: 800px; 
     height: 525px;
   } 
 
   100% {
-    top: 0;  
-    left: 0;   
+    bottom: 9%;
+    right: 37.5%;   
   }
 }
 
 @keyframes front {
- 0% {
-  top: 0;
-  left: 0;
- }
+  0% {
+  bottom: 9%;
+  right: 37.5%;
+  }
   50% {
-  top: 87px;
-  left: 0;
-  z-index: 3;
-  width: 860px;
-  height: 490px;
- } 
- 100% {
-  top: 87px;
-  left: 350px;    
- } 
-}
-
-@media (min-width: 1440px) {
-  .slider_block__item {
-    &--back {
-      top: -14px;  
-      left: 0;      
-    }
-
-    &--front {      
-      top: 73px;
-      left: 420px;      
-    }
-  }
-
-/*Анимация слайдов*/
-
-  @keyframes back {
-    0% { 
-      top: 87px;
-      left: 420px;
-    }
-    50% {
-      top: -14px;
-      left: 420px;
-      z-index: 2;
-      width: 800px; 
-      height: 525px;
-    } 
-    100% {
-      top: -14px;  
-      left: 0;   
-    }
-  }
-
-  @keyframes front {
-    0% {
-      top: 0;
-      left: 0;
-    }
-    50% {
-    top: 73px;
-    left: 0;
+    bottom: 9%;
+    right: 0;
     z-index: 3;
     width: 860px;
     height: 490px;
-    } 
-    100% {
-      top: 73px;
-      left: 420px;    
-    } 
-  }
+  } 
+  100% {
+  bottom: 0;
+  right: 0;    
+  } 
 }
-
-
-
