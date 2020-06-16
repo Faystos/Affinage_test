@@ -1,10 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpackMerge = require('webpack-merge');
+
+const mergeConfig = (mode) => require(`./webpackConfigs/webpack.${mode}.js`)();
 
 module.exports = ({mode}) => {
   console.log('server started')
-  return {
+  return webpackMerge ({
     mode: mode,
     entry: './src/index.js',
     output: {
@@ -14,10 +17,6 @@ module.exports = ({mode}) => {
 
     module: {
       rules: [
-        {
-          test: /\.less$/,
-          use: ['style-loader', 'css-loader', 'less-loader']
-        },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,
           loader: 'file-loader',
@@ -33,6 +32,18 @@ module.exports = ({mode}) => {
             name: '[name].[ext]',
             outputPath: './img'
           },
+        },
+        {
+          test: /\.js/,
+          exclude: /node_modules/,
+          use: [
+              {
+                  loader: 'babel-loader',
+                  options: {
+                      presets: ['@babel/preset-env'],
+                  },
+              },
+          ],          
         },
       ],
     },
@@ -50,6 +61,5 @@ module.exports = ({mode}) => {
           template: './src/index.html'
         }),      
     ],
-
-  }
+  }, mergeConfig(mode));  
 } 
