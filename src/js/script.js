@@ -3,7 +3,8 @@ let sliderBlockItem = document.querySelectorAll('.slider_block__item');
 
 let imgLeft = document.querySelector('.slider_block__item--left .item__img');
 let imgRight = document.querySelector('.slider_block__item--right .item__img');
-const imgArr = ['arca', 'ural', 'building'];
+const imgArrLeft = [ 'ural', 'arca', 'ural'];
+const imgArrRight = ['arca', 'building', 'arca'];
 let i = 0;
 
 // Событие нажатий кнопки управления слайдером.
@@ -14,12 +15,11 @@ btns.forEach(el => {
       toogleClass(it);      
     });
 
-    if (i == imgArr.length) i = 0; 
-    // swapImagSlide(imgLeft, imgArr);
-    // swapImagSlide(imgRight, imgArr, i);
-    i++; 
-       
-  })
+    
+    swapImagSlide(imgLeft, imgArrLeft);
+    swapImagSlide(imgRight, imgArrRight);     
+    i++;        
+  });
 });
 
 // Инициация запуска анимации смены слайдов.
@@ -48,12 +48,8 @@ function toogleClass (el) {
 }
 
 // смена изображения в слайдах.
-function swapImagSlide (imgSlide, arr) {   
-  imgSlide.src = `./img/${arr[i]}.jpg`;
-  
-  console.log(i);
-  // console.log(arr.length);
-    
-      
+function swapImagSlide (imgSlide, arr) { 
+  if (i > arr.length - 1) i = 0;   
+  imgSlide.src = `./img/${arr[i]}.jpg`;      
 }
 

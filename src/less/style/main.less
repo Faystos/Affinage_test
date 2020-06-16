@@ -96,6 +96,28 @@ button {
       transform:translate(-50%, -50%); 
     }   
   }  
+
+  .main__test_text {
+    @media (min-width: 320px) {
+      display: none;
+    }
+
+    @media (min-width: 1440px) {
+      display: inline-block;
+      font-family: "Geometria LightItalic";
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: 0.44px;
+      color: #000000;
+      opacity: 0.4;
+      width: 150px;
+      position: absolute;
+      top: 373px;
+      left: -50px;
+      z-index: 100;
+      transform: rotate(-90deg);
+    }
+  }
   
   .main__logo {
     @media (min-width: 320px) {
